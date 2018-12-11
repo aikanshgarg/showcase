@@ -1,3 +1,43 @@
+/*SCROLLBAR: The -webkit-scrollbar is not supported by Firefox or IE and Edge*/
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 100px 100px 5px #111; 
+  border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent; 
+  border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #F44336; 
+}
+
+/*BECAUSE MATERIALIZE AND CSS PULSE COLLIDE*/
+@keyframes my-pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+.my-pulse {
+  animation-name: my-pulse;
+  animation-duration: 2s;
+}
+.my-animated {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+
+
+
 body {
 	height: 100vh;
 	background-color: #111;
@@ -5,4 +45,7 @@ body {
 
 .uk-container {
 	background-color: #111;
+}
+.uk-card {
+	cursor: -webkit-grab;
 }
