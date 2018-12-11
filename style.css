@@ -49,3 +49,10 @@ body {
 .uk-card {
 	cursor: -webkit-grab;
 }
+
+@media only screen and (orientation: portrait) {
+  .uk-container{
+  	padding-left: 15px;
+  	padding-right: 15px;
+  }
+}
