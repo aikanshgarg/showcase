@@ -1,8 +1,8 @@
 /*SCROLLBAR: The -webkit-scrollbar is not supported by Firefox or IE and Edge*/
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 0px;
+  height: 0px;
 }
 /* Track */
 ::-webkit-scrollbar-track {
@@ -18,6 +18,24 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #F44336; 
 }
+
+/*SCROLL INDICATOR*/
+.progress-container {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 8px;
+  background: #111;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #F44336;
+  width: 0%;
+}
+
+
 
 /*BECAUSE MATERIALIZE AND CSS PULSE COLLIDE*/
 @keyframes my-pulse {
@@ -73,3 +91,6 @@ body {
 		opacity: 1;
 	}
 }
+
+
+
