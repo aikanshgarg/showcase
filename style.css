@@ -66,7 +66,9 @@ body {
 
 .card {
 	cursor: -webkit-grab;
+  background-color: #fafafa;
 }
+
 .uk-subnav-pill>.uk-active>a {
     background-color: #F44336;
 }
@@ -79,17 +81,36 @@ body {
   	padding-left: 15px;
   	padding-right: 15px;
   }
+  .uk-position-cover {
+    background-color: #F44336;
+    opacity: 0.9;
+  }
+  .uk-position-cover:hover {
+    background-color: transparent;
+    opacity: 1;
+  }
 }
+
 @media only screen and (orientation: landscape) {
 	.uk-card {
-		opacity: 0.6;
-		-webkit-transition: opacity 0.15s; /* For Safari 3.1 to 6.0 */
-  		transition: opacity 0.15s;
+		opacity: 1;
+		-webkit-transition: opacity 0.2s; 
+  		transition: opacity 0.2s;
 	}
+
+  .uk-position-cover {
+    background-color: #F44336;
+    opacity: 0.9;
+    -webkit-transition: background-color 0.2s; 
+    transition: background-color 0.2s;
+}
 
 	.uk-card:hover {
 		opacity: 1;
 	}
+  .uk-position-cover:hover {
+    background-color: transparent;
+  }
 }
 
 
