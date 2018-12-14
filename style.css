@@ -1,4 +1,4 @@
-/*SCROLLBAR: The -webkit-scrollbar is not supported by Firefox or IE and Edge*/
+SCROLLBAR: The -webkit-scrollbar is not supported by Firefox or IE and Edge*/
 /* width */
 ::-webkit-scrollbar {
   width: 0px;
@@ -16,7 +16,7 @@
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #F44336; 
+  background: #111; 
 }
 
 
@@ -56,6 +56,16 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
 body {
 	height: 100vh;
 	background-color: #111;
@@ -81,37 +91,80 @@ body {
   	padding-left: 15px;
   	padding-right: 15px;
   }
-  .uk-position-cover {
+  /*.uk-position-cover {
     background-color: #F44336;
     opacity: 0.9;
   }
   .uk-position-cover:hover {
     background-color: transparent;
     opacity: 1;
-  }
+  }*/
 }
 
-@media only screen and (orientation: landscape) {
-	.uk-card {
-		opacity: 1;
-		-webkit-transition: opacity 0.2s; 
-  		transition: opacity 0.2s;
-	}
+/*@media only screen and (orientation: landscape) {*/
 
   .uk-position-cover {
     background-color: #F44336;
     opacity: 0.9;
-    -webkit-transition: background-color 0.2s; 
-    transition: background-color 0.2s;
+    -webkit-transition: background-color 0s; 
+    transition: background-color 0s;
 }
 
-	.uk-card:hover {
-		opacity: 1;
-	}
-  .uk-position-cover:hover {
+  .uk-position-cover:hover, .uk-position-cover:active {
     background-color: transparent;
+    opacity: 1;
   }
+
+
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#myDiv{
+  display: none;
 }
 
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #fff;
+  border-radius: 50%;
+  border-top: 16px solid #F44336;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
 
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

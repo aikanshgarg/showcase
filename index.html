@@ -23,6 +23,9 @@
 
 
 </head>
+<!-- <body onload="myFunction()" style="margin:0;"> <div id="loader"></div>
+<div style="display:none;" id="myDiv"> -->
+
 <body>
 
 		<div class="progress-container">
@@ -31,11 +34,11 @@
 
 
 
-		<div class="uk-container uk-container-expand uk-padding-large">
+		<div class="uk-container uk-container-expand uk-padding-large uk-animation-fade">
 
 			<div uk-filter="target: .js-filter">
 
-			    <div class="uk-grid-small uk-grid-divider uk-child-width-auto" uk-grid>
+			    <div class="uk-grid-small uk-grid-divider uk-child-width-auto uk-animation-shake" uk-grid>
 			        <div>
 			            <ul class="uk-subnav uk-subnav-pill" uk-margin>
 			                <li class="uk-active" uk-filter-control onclick="UIkit.notification({message: 'You can drag and reposition these cards!', pos: 'top-right'})"><a href="#">All</a></li>
@@ -608,18 +611,18 @@
 		<footer class="page-footer red" style="position: relative;">
 		    <div class="footer-copyright">
 		      <div class="container center">
-		      <i class="far fa-copyright"></i> Designed & Developed with  &nbsp;<i class="fas fa-heart my-animated my-pulse" style="font-size: 18px;"></i> &nbsp;by <a href="https://aikanshgarg.github.io/" class="red-text text-lighten-3">Aikansh Garg</a>
+		      <i class="far fa-copyright"></i> Designed & Developed with&nbsp;<i class="fas fa-heart my-animated my-pulse" style="font-size: 18px;"></i>&nbsp;by <a href="https://aikanshgarg.github.io/" class="red-text text-lighten-3">Aikansh Garg</a>
 		      </div>
 		    </div>
 	    </footer>
 
 
-	    <div class="loader"></div>
+<!-- 	    </div> -->
 
 
 	<!-- LIVERELOAD JS (for development only) -->
-      <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-
+<!--       <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
+<script type="text/javascript" src="script.js"></script>
 	<!-- UIkit JS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
@@ -629,6 +632,6 @@
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-	<script type="text/javascript" src="script.js"></script>
+	
 </body>
 </html>
