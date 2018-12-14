@@ -7,9 +7,13 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+    <!-- AOS CSS FOR SCROLL ANIMATIONS -->
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
 	
 	<!-- FontAwesome CSS -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 	<!-- Material Icons CSS -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -32,38 +36,37 @@
 			<div class="progress-bar" id="myBar"></div>
 		</div>  
 
+<!-- REMOVING SORTABLE(drag cards) EFFECT FOR MOBILES -->
 
+			
+	<div class="uk-container uk-container-expand uk-padding-large uk-animation-fade hide-on-large-only">
 
-		<div class="uk-container uk-container-expand uk-padding-large uk-animation-fade">
+		<div uk-filter="target: .js-filter">
 
-			<div uk-filter="target: .js-filter">
+		    <div class="uk-grid-small uk-grid-divider uk-child-width-auto" uk-grid  data-aos="fade-down" data-aos-duration="3000">
+		        <div>
+		            <ul class="uk-subnav uk-subnav-pill" uk-margin>
+		            	<li class="uk-active" uk-filter-control onclick="UIkit.notification({message: 'You can drag and reposition these cards on your PCs!', pos: 'top-right'})"><a href="#">All</a></li>
+		            </ul>
+		        </div>
+		        <div>
+		            <ul class="uk-subnav uk-subnav-pill" uk-margin>
+		                <li uk-filter-control="[data-color='white']"><a href="#">JavaScript</a></li>
+		                <li uk-filter-control="[data-color='blue']"><a href="#">CSS/SASS</a></li>
+		                <li uk-filter-control="[data-color='black']"><a href="#">Ruby on Rails</a></li>
+		            </ul>
+		        </div>
+		        <div>
+		            <ul class="uk-subnav uk-subnav-pill" uk-margin>
+		                <li uk-filter-control="[data-size='small']"><a href="#">Beginner</a></li>
+		                <li uk-filter-control="[data-size='medium']"><a href="#">Medium</a></li>
+		                <li uk-filter-control="[data-size='large']"><a href="#">Advanced</a></li>
+		            </ul>
+		        </div>
+		         
+		    </div>
 
-			    <div class="uk-grid-small uk-grid-divider uk-child-width-auto uk-animation-shake" uk-grid>
-			        <div>
-			            <ul class="uk-subnav uk-subnav-pill" uk-margin>
-			                <li class="uk-active" uk-filter-control onclick="UIkit.notification({message: 'You can drag and reposition these cards!', pos: 'top-right'})"><a href="#">All</a></li>
-			            </ul>
-			        </div>
-			        <div>
-			            <ul class="uk-subnav uk-subnav-pill" uk-margin>
-			                <li uk-filter-control="[data-color='white']"><a href="#">JavaScript</a></li>
-			                <li uk-filter-control="[data-color='blue']"><a href="#">CSS/SASS</a></li>
-			                <li uk-filter-control="[data-color='black']"><a href="#">Ruby on Rails</a></li>
-			            </ul>
-			        </div>
-			        <div>
-			            <ul class="uk-subnav uk-subnav-pill" uk-margin>
-			                <li uk-filter-control="[data-size='small']"><a href="#">Beginner</a></li>
-			                <li uk-filter-control="[data-size='medium']"><a href="#">Medium</a></li>
-			                <li uk-filter-control="[data-size='large']"><a href="#">Advanced</a></li>
-			            </ul>
-			        </div>
-			         
-			    </div>
-
-		
-
-			    <ul class="js-filter uk-child-width-1-1 uk-child-width-1-3@m uk-text-center" uk-grid="masonry: true" uk-sortable="handle: .uk-card">
+				<ul class="js-filter uk-child-width-1-1 uk-child-width-1-3@m uk-text-center ul-uk-lis" uk-grid="masonry: true" data-aos="slide-up" data-aos-duration="3000">
 			        
 			        <li data-color="black" data-size="large">
 			            <div class="card uk-card">
@@ -78,8 +81,8 @@
 						      	<p style="margin-left:-10%;">
 						      		<a href="images/ig1.png" data-caption="The fake signup page. Images inside the dummy mobile move as well!" class="grey-text">Yet to be deployed, see images here</a>
 						      		<a href="images/ig4.png" data-caption="User account-setting page similar to Instagram's" class="grey-text"></a>
-						      		<a href="images/ig2" data-caption="The default feed of users on logging in" class="grey-text"></a>
-						      		<a href="images/ig3" data-caption="My profile page which stores bookmarked and authored posts" class="grey-text"></a>
+						      		<a href="images/ig2.png" data-caption="The default feed of users on logging in" class="grey-text"></a>
+						      		<a href="images/ig3.png" data-caption="My profile page which stores bookmarked and authored posts" class="grey-text"></a>
 						      	</p>
 						      </div>
 						    </div>
@@ -603,6 +606,584 @@
 
 
 			    </ul>
+			</div>
+		</div>
+
+
+
+
+		
+<!--USING SORTABLE EFFECT FOR DESKTOPS & LAPTOPS -->
+
+	<div class="uk-container uk-container-expand uk-padding-large hide-on-med-and-down" data-aos="fade-down-left" data-aos-duration="3000">
+
+		<div uk-filter="target: .js-filter">
+
+		    <div class="uk-grid-small uk-grid-divider uk-child-width-auto" uk-grid>
+		        <div>
+		            <ul class="uk-subnav uk-subnav-pill" uk-margin>
+		                <li class="uk-active" uk-filter-control onclick="UIkit.notification({message: 'You can drag and reposition these cards!', pos: 'top-right'})"><a href="#">All</a></li>
+		            </ul>
+		        </div>
+		        <div>
+		            <ul class="uk-subnav uk-subnav-pill" uk-margin>
+		                <li uk-filter-control="[data-color='white']"><a href="#">JavaScript</a></li>
+		                <li uk-filter-control="[data-color='blue']"><a href="#">CSS/SASS</a></li>
+		                <li uk-filter-control="[data-color='black']"><a href="#">Ruby on Rails</a></li>
+		            </ul>
+		        </div>
+		        <div>
+		            <ul class="uk-subnav uk-subnav-pill" uk-margin>
+		                <li uk-filter-control="[data-size='small']"><a href="#">Beginner</a></li>
+		                <li uk-filter-control="[data-size='medium']"><a href="#">Medium</a></li>
+		                <li uk-filter-control="[data-size='large']"><a href="#">Advanced</a></li>
+		            </ul>
+		        </div>
+		         
+		    </div>
+
+
+			    <ul class="js-filter uk-child-width-1-1 uk-child-width-1-3@m uk-text-center ul-uk-lis" uk-grid="masonry: true" uk-sortable="handle: .uk-card" data-aos="slide-up" data-aos-duration="3000">
+			        
+			        <li data-color="black" data-size="large">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      	<img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/ig1.png">
+								<div class="uk-position-cover"></div>
+							</div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Instagram</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left:-10%;">Copycat Instagram with RoR</p>
+						      <div uk-lightbox>
+						      	<p style="margin-left:-10%;">
+						      		<a href="images/ig1.png" data-caption="The fake signup page. Images inside the dummy mobile move as well!" class="grey-text">Yet to be deployed, see images here</a>
+						      		<a href="images/ig4.png" data-caption="User account-setting page similar to Instagram's" class="grey-text"></a>
+						      		<a href="images/ig2.png" data-caption="The default feed of users on logging in" class="grey-text"></a>
+						      		<a href="images/ig3.png" data-caption="My profile page which stores bookmarked and authored posts" class="grey-text"></a>
+						      	</p>
+						      </div>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Instagram Clone<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>A small scale yet fully-functional clone of the official Instagram web application. This app has all the basic features such as user-login, account-setting, post, comment, like, bookmark and user-search. Special emphasis on replicating the UI/UX of original app.<br><br>Things learnt: OAuth API authentication, Gravatar, Image uploading, Cloud storage, Ajax, Bootstrap and SASS</p>
+						    </div>
+						</div>
+			        </li>
+
+
+
+			        <li data-color="white" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/ms.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Mr. Snakey</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/Snakey/" target="_blank" class="grey-text text-darken-4">This snake is an array</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Mr. Snakey<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>I’m sure you all have played the classic Snake game on your Nokia 6110 phones. I also worked on a similar project that stemmed from the snake gameplay! It's easy to play, hard to master. Did you know, Snake==Array?<br><br>Things explored: HTML5 Canvas, Gameover conditions, Loading images/audio</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="white" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/tr.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Traffic Runner</span><i class="material-icons right">more_vert</i></span>
+						      <p  style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/TrafficRunner/" target="_blank" class="grey-text text-darken-4">Look at those headlights</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Traffic Runner<i class="material-icons right">close</i></span>
+						      <p class="left-align"> <br>Who doesn't like speeding in the traffic! I made this pretty cool game where the user controls the car's speed and direction with arrow keys en route dodging other cars in the traffic. I followed Very Easy Tuts channel on YouTube for this project.<br><br>Things explored: Styling HTML divs with CSS, Javascript animation frame, Collision, Slide down function</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="white" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/hb.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Happy Bird</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/HappyBird/" target="_blank" class="grey-text text-darken-4">Let's fight gravity</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Happy Bird<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>Objective of the game is to go through pipes without touching them while fighting against the gravity that is pulling you down constantly. The game gets infinitely harder as it gets faster. The longer you survive, the more points you earn! I followed Very Easy Tuts channel on YouTube for this project.<br><br>Things explored: Functions (for code reusability), Game loop patterns, Event listeners, Collision</p>
+						    </div>
+						</div>
+			        </li>
+
+			        <li data-color="blue" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/cwc1.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Cricket Betting App</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left:-10%;">Designed the dashboard & landing pages</p>
+						      <div uk-lightbox>
+						      	<p style="margin-left:-10%;">
+						      		<a href="images/cwc2.png" data-caption="Home page showing creator-cards and user-rankings" class="grey-text">See images here</a>
+						      		<a href="images/cwc4.png" data-caption="User dashboard with three tabs, each opening different content" class="grey-text"></a>
+						      		<a href="images/cwc5.png" data-caption="A customized BS modal pops up on opening any tab" class="grey-text"></a>
+						      		<a href="images/cwc6.png" data-caption="A nice parallax effect added to the matchlists page" class="grey-text"></a>
+						      		<a href="images/cwc3.png" data-caption="The signup form requied to proceed" class="grey-text"></a>
+						      	</p>
+						      </div>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Cricket Betting App<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>A cricket betting app where users can match with random opponents for a one-on-one clash during the CWC'19. I worked on the frontend part of this project designing and coding the User-Dashboard, Landing Page and Login Forms. This project was started, in a team, with great zeal but remains incomplete.</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="white" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator uk-animation-reverse uk-transform-origin-bottom-right" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/mm.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Minesweeper</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/MinimalMinesweeper/" target="_blank" class="grey-text text-darken-4">Mini version of the classic game</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Mini Minesweeper<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>In this challenge, I attempt to code the classic game Minesweeper in JavaScript with the p5.js library. I followed The Coding Train challenge#71 on YouTube for this game (that guy's the so damn cool!). <br><br>Things learnt: OOP (Javascript), Code refactoring, Canvas (p5.js), Functions (to reuse the code)</p>
+						    </div>
+						</div>
+			        </li>
+
+			        <li data-color="black" data-size="large">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" src="images/gc3.png" style="max-height: 400px;">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Chatzy</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left:-10%;">Group Chat App</p>
+						      <div uk-lightbox>
+						      	<p style="margin-left:-10%;">
+						      		<a href="images/gc4.png" data-caption="Page displaying all chatrooms with CRUD operations" class="grey-text">Yet to be deployed, see images here</a>
+						      		<a href="images/gc1.png" data-caption="Left drawer to show user profile when signed-in" class="grey-text"></a>
+						      		<a href="images/gc2.png" data-caption="Differently colored message boxes to distinguish between sent & received" class="grey-text"></a>
+						      	</p>
+						      </div>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Chatzy<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>Realtime Group Chat With ActionCable. The power of rails 5's action cable was leveraged to make a group chatroom app, where users can join/make a chatroom and send/receive messages in real time.<br><br>Things learnt: ActionCable, CoffeeScript, Materialize.css</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="white" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/egg.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Catch the Eggs</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/CatchTheEgg/" target="_blank" class="grey-text text-darken-4">Gotta catch 'em all</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Catch the Eggs<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>Another classic game from the 90's when we weren't introduced to mobile gaming and desktop was the hot craze. The objective of this fairly simple yet addictive game is to catch the eggs falling from the sky(I meant the hen, lol). I followed Very Easy Tuts channel on YouTube for this project.<br><br>Things explored: Using images inside moving divs, Collision, Slide down function</p></p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="black" data-size="large">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/forum.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Discussion Forum</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left:-10%;">CRUD taken seriously</p>
+						      <!-- <div uk-lightbox> -->
+						      	<p style="margin-left:-10%;">
+						      		<a href="#" class="grey-text">Work under progress</a>
+						      		<!-- <a href="#" data-caption="data-caption" class="grey-text"></a>
+						      		<a href="#" data-caption="data-caption" class="grey-text"></a> -->
+						      	</p>
+						      <!-- </div> -->
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Discussion Forum<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>A discussion forum with appropriate channels where authors can manage their own discussion by editing or deleting it at any time once logged in. Any discussion can have many replies which is what makes forums so great for a community based application.<br><br>Things explored: Markdown support and syntax highlighting for code snippets, Admin user roles, Prettier URLS, Ajax replies</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="blue" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" src="images/rf.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Sassy Forms</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/devise-form-stylo/" target="_blank" class="grey-text text-darken-4">These surely look nicer</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Sassy & Trendy Forms<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>The default forms provided by Rails framework were too boring for me to work with. I completely redesigned and coded them from scratch using Bootstrap components for the layout. I also added a Flippable-Card effect to these to show you guys the before and after of these forms, feel free to use them in your personal projects!</p>
+						    </div>
+						</div>
+			        </li>
+		        
+
+			        <li data-color="blue" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/uc.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Under Construction</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="#" class="grey-text text-darken-4">A coming soon page</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Under Construction<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>A simple and sleek design for your company's coming soon message.<br>What's special? Open the design and try rotating your mobile device!<br><br>Things explored: Redirecting one webpage to another on depending on the type of device (mobile/desktop).</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="blue" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator uk-animation-reverse uk-transform-origin-top-right" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/cssc.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Meme Cube</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left:-12%;"><a href="https://aikanshgarg.github.io/3DMemeCube/" target="_blank" class="grey-text text-darken-4">Rotatable CSS cube</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Meme Cube<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>Used pure CSS3 to make a rotatable 3-dimensional cube. CSS's transform rotate (for 3D effect), transition (for rotation smoothness) and perspective properties were used to make this mini project. The faces of the cube show up some memes I made when I had to study for semester exams, lol.</p>
+						    </div>
+						</div>
+			        </li>
+
+			        <li data-color="black" data-size="small">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/senti.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Sentimental Tweets</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left:-10%;" class="grey-text text-darken-4">Analyses nature of tweets</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Sentimental Tweets<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>A pure application of the popular rails gem- sentimental_tweets.<br> It fetches selected (according to our conditions) tweets from the official Twitter app, analyses their score to determine if it's a positive tweet or a negative one. <br> Infinitely many words are used as a data-set, given by the gem but we can add our own words to that list!</p>
+						    </div>
+						</div>
+			        </li>
+
+			        <li data-color="blue" data-size="large">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/res.png"><div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Resume Template</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="images/resume-day.pdf" target="_blank" class="grey-text text-darken-4">Template made with pure CSS</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Resume Template<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>I wanted to make my resume/CV but was having a hard time learning Photoshop as a complete alien to it's tools and terminologies. After hours of scratching head, I took the road less travelled by for designign a resume- HTML+CSS! It was extremely challenging yet fun to make a Timeline, Overlapping boxes and positioning so many divs.</p>
+						    </div>
+						</div>
+			        </li>
+
+			        <li data-color="black" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" src="images/book.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Book Keeper</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;">CRUD, Validations & Categories</p>
+						      <!-- <div uk-lightbox>
+						      	<p style="margin-left:-10%;">
+						      		<a href="signup.png" data-caption="The fake signup page. Images inside the dummy mobile move as well!" class="grey-text">Yet to be deployed, see images here</a>
+						      		<a href="account.png" data-caption="User account-setting page similar to Instagram's" class="grey-text"></a>
+						      		<a href="home.png" data-caption="The default feed of users on logging in" class="grey-text"></a>
+						      		<a href="post.png" data-caption="Particular post's page" class="grey-text"></a>
+						      		<a href="profile.png" data-caption="My profile page which stores bookmarked and authored posts" class="grey-text"></a>
+						      	</p>
+						      </div> -->
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Book Keeper<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>A web app which acts as a showcase for all the books a user(signed-in) has added with links to buy/edit/delete it.
+						      	<br><br>Things learnt: CRUD, Categories Model, Image Uploading (using paperclip), Ajax, Bootstrap</p>
+						    </div>
+						</div>
+			        </li>
+
+			        <li data-color="white" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" src="images/pp.png"><div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Ping Pong</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/PingPong/" target="_blank" class="grey-text text-darken-4">2-player pong</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">2-Player Ping Pong<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>The iconic 2-player pong with a nice song in the background while you try to beat your opponent. Pong is a fairly trivial game, but still requires a little infrastructure to do right. <br><br> This is a slightly over-engineered version, but still there is more that could have been added: <br>&#8594; Touch events - for mobile browsers we need a different design for our user input, perhaps we could support touch events for the paddle movements.<br>&#8594; CSS @media queries - we should probably scale the pong game canvas based on the users screen real estate.</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="black" data-size="large">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" src="images/ta4.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Trading App</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;">In-app messaging</p>
+						      <div uk-lightbox>
+						      	<p style="margin-left:-10%;">
+						      		<a href="images/ta1.png" data-caption="Landing page on signing-in successfully, beautiful devise messages!" class="grey-text">Yet to be deployed, see images here</a>
+						      		<a href="images/ta2.png" data-caption="See others' trades and message them" class="grey-text"></a>
+						      		<a href="images/ta3.png" data-caption="All-responsive messaging window, no ajax here though" class="grey-text"></a>
+						      		<a href="images/ta4.png" data-caption="Author actions shown at far right, when allowed" class="grey-text"></a>
+						      	</p>
+						      </div>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Trading App<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>An app where users can upload their items to be traded and interact accordingly. Think of the messaging structure like an ongoing conversation. Users can initially create a conversation and always look back to their history. I was introduced to new methods including scopes, params, and more that come bundled with Rails. I have been following Web Crunch YouTube channel for backend heavy rails project. I used his own Rails application template called Kick Off. Yeah, a big thanks to these guys who are helping us beginners learn!</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="blue" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/zin.png" style="max-height: 300px;">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">ZIN!</span><i class="material-icons right">more_vert</i></span>
+						      <p  style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/ZumbaTherapy/" target="_blank" class="grey-text text-darken-4">Portfolio template</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Portfolio Template for ZIN<i class="material-icons right">close</i></span>
+						      <p class="left-align b"><br>A mobile-friendly beautiful portfolio, for a zumba instructor, that masters the art of visual presentation. An amalgamation of my love for this crazy dance form and the magic that Bootstrap sprinkles!<br>&copy; Design inspiration: wix.com<br><br>Things learnt: Responsive and trendy design, Invered pyramid technique, Formspree<br><br><span class="red-text"> Note: The images used are not meant to be used anywhere as these have been put in this project only, with the owner's permission.</span></p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="black" data-size="small">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/spree.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">SpreeShop</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left:-10%;" class="grey-text text-darken-4">An e-commerce website</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Spreeshop: e-commerce<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>I tried my hand at making a fully-functional e-commerce website using rails with all the features one can think of in a shopping site! Let it be products available, search( and nested seach), currency options, buy, return, admin-side, user-side, cart, payments(paypal gateway) and so much more. I obviously didn't implement any of them from scratch. Why? Because re-inventing the wheel makes no sense, that too an imperfect one. I used the super awesome Spree framework instead. Spree Commerce is an open-source e-commerce solution based on Ruby on Rails</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="white" data-size="large">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator uk-animation-reverse uk-transform-origin-top-left" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/ttt.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Unbeatable Tic-Tac-Toe</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/TicTacToe/" target="_blank" class="grey-text text-darken-4">Recursion fakes AI</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Unbeatable TicTacToe<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>I struggled for hours scrolling through tutorials, watching videos, and banging my head on the desk trying to build an unbeatable Tic Tac Toe game with a reliable Artificial Intelligence. But looking at the finished project, it seems the hustle was worth every second. It's so much using the power of Recursion in making the move look like AI!<br><br>Source: &nbsp;<a href="https://medium.freecodecamp.org/how-to-make-your-tic-tac-toe-game-unbeatable-by-using-the-minimax-algorithm-9d690bad4b37" target="_blank"></a></p>
+						    </div>
+						</div>
+			        </li>
+
+			        <li data-color="white" data-size="small">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" src="images/cal.png"><div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Calculator</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/MinimalCalculator/" target="_blank" class="grey-text text-darken-4">Beginner project</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Minimalistic Calculator<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>This was one of the first projects I tried using Javascript (completely coded in vanilla js). I explored what Event Listeners meant and did as well as how arithmetic operations work crazily in javascript. Writing HTML text from the .js file was also a discovery for me back then. This mini project motivated me to explore this beautiful language even more.</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="white" data-size="small">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator uk-animation-reverse uk-transform-origin-bottom-right" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/first.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Flying Box</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/CatchMeIfYouCan/" target="_blank" class="grey-text text-darken-4">First ever interaction with JS</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Flying Box<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>A square div flying across the window, changing colors randomly on hover, flies in random direction when the mouses is over it! Your goal is to stop the box from going out of the window. Fun, easy, minimal! <br><br><span class="green-text">This was my first project (and it looks so) exploring Javascript mouseover() event along with hover property given by CSS.</span> </p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="black" data-size="large">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" src="images/p1.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Projekt Manager</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="#" class="grey-text">Work under progress</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Projekt Manager<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>Another tutorial by Web Crunch which explores the power of Vue.js combined with rails. The goal of the app is to be a home for any amount of projects(think Basecamp but much more stripped down). A project lives within a team and can have as many users as necessary. A user can only belong to one team at a time (this is a small side-effect of the Devise gem. Ultimately, we'd want to extend this to allow a single user to belong to multiple teams.)</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="black" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" src="images/mr1.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Fresh Tomatoes</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="#" target="_blank" class="grey-text text-darken-4">Rate your favorite movies</a></p>
+						      <div uk-lightbox>
+						      	<p style="margin-left:-10%;">
+						      		<a href="images/mr1.png" data-caption="There's a nice parallax effect at home page" class="grey-text">Yet to be deployed, see images here</a>
+						      		<a href="images/mr2.png" data-caption="Star ratings, average rating, review comments, movie details!" class="grey-text"></a>
+						      	</p>
+						      </div>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Movie Rater<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>A stripped down version of Rotten Tomatoes web app, built with powerful rails. Used inbuilt scaffolding to create models and basic setup because I wanted to explore 2 particular gems, one for star-rating feature and other for search. The UI/UX is average as I didn't spend much time over designing. Anyway, design is responsive.<br><br>Things learnt: Raty.js, Searchkik gem and its installation(a big deal imo), Devise setup</p>
+						    </div>
+						</div>
+			        </li>
+
+			        <li data-color="white" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator uk-animation-reverse uk-transform-origin-top-right" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/mc.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Memory Champ</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/MemoryGameUdacity/" target="_blank" class="grey-text text-darken-4">Test your hippocampus here</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Memory Champ<i class="material-icons right">close</i></span>
+						      <p class="left-align"><br>A fun game to flex your brain muscles and match 2 cards with same image. <br><br>Behind the hood: an openedCards array to store current cards and compare if these are matched (will always have a length of 2). A matchedCards array to check if all cards have been opened (for gamover conditions).</p>
+						    </div>
+						</div>
+			        </li>
+
+
+			        <li data-color="black" data-size="medium">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" src="images/img2.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Imagene</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="#" target="_blank" class="grey-text text-darken-4">A cool image gallery</a></p>
+						      <div uk-lightbox>
+						      	<p style="margin-left:-10%;">
+						      		<a href="images/img2.png" data-caption="There's a pure CSS animation effect on hovering images" class="grey-text">Yet to be deployed, see images here</a>
+						      		<a href="images/img3.png" data-caption="Categories to filter images" class="grey-text"></a>
+						      		<a href="images/img4.png" data-caption="The entire gallery can be scrolled through a lightbox, it's touch compatible and super awesome!" class="grey-text"></a>
+						      		<a href="images/img1.png" data-caption="Form for signed-in user, with option to add image" class="grey-text"></a>
+						      	</p>
+						      </div>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">Imagene- image gallery<i class="material-icons right">close</i></span>
+						      <p class="left-align">A responsive and pretty image gallery which store all the images a validated user uploads, gives them a very nice animation effect as well.<br><br>Things learnt: CSS animations, Overlapping two divs and showing other on hover with varying opacity!</p>
+						    </div>
+						</div>
+			        </li>
+
+			        <li data-color="blue" data-size="small">
+			            <div class="card uk-card">
+						    <div class="card-image waves-effect waves-block waves-light">
+						      <img class="activator" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" src="images/hw.png">
+						      <div class="uk-position-cover"></div>
+						    </div>
+						    <div class="card-content">
+						      <span class="card-title activator grey-text text-darken-4"><span class="red-text">Hello World</span><i class="material-icons right">more_vert</i></span>
+						      <p style="margin-left: -10%;"><a href="https://aikanshgarg.github.io/CeeveeBadCopy" target="_blank" class="grey-text text-darken-4">Copying a readymade template design</a></p>
+						    </div>
+						    <div class="card-reveal">
+						      <span class="card-title grey-text text-darken-4">John Doe Template<i class="material-icons right">close</i></span>
+						      <p class="left-align">Beginnings are always the hardest part but turn into sweet memories when you look back. This was the first time I explored the world of web design and development, trying badly to copy a ready-made template. The result no where looks even near to perfect but taught me to appreciate finer details of web page designing which most people overlook. <br><br><span class="green-text">This project has been included with no intentions of portraying any sort of skills! Is the old school "Hello World" of HTML+CSS</span></p>
+						    </div>
+						</div>
+			        </li>
+
+
+			    </ul>
 
 			</div>
 		</div>
@@ -621,8 +1202,14 @@
 
 
 	<!-- LIVERELOAD JS (for development only) -->
-<!--       <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
-<script type="text/javascript" src="script.js"></script>
+      <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+      <!-- AOS JS(ANIMATIONS ON SCROLL) -->
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+
 	<!-- UIkit JS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
@@ -631,6 +1218,8 @@
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<script type="text/javascript" src="script.js"></script>
 
 	
 </body>
