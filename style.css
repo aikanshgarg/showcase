@@ -98,30 +98,21 @@ body {
 
 @media only screen and (orientation: landscape) {
 
-  .uk-position-cover {
+  .uk-position-cover:hover {
     background-color: #F44336;
-    opacity: 0.9;
+    opacity: 0.4;
     -webkit-transition: background-color 0.2s; 
     transition: background-color 0.2s;
+    font-size: 18px;
+    color: #fafafa;
 }
 
-  .uk-position-cover:hover, .uk-position-cover:active {
+  .uk-position-cover{
     background-color: transparent;
-    opacity: 1;
   }
 
 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
